@@ -1,0 +1,96 @@
+﻿<Window x:Class="lab01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" MinWidth="800" Width="800"
+        FontFamily="Consolas"
+        Loaded="MainWindow_Loaded" SizeChanged="Window_SizeChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+
+        <Canvas x:Name="axisCanvas">
+
+        </Canvas>
+
+        <Canvas x:Name="canvas">
+            
+        </Canvas>
+
+        <StackPanel Grid.Column="1">
+            <Label Content="Draw squares" HorizontalAlignment="Center"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="TOP LEFT POINT" Grid.ColumnSpan="2"/>
+
+                <DockPanel LastChildFill="True" Margin="5" Grid.Row="1">
+                    <Label Content="X:"/>
+                    <TextBox x:Name="xTopLeftTextBox" Grid.Column="1" VerticalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel LastChildFill="True" Grid.Column="1" Margin="5" Grid.Row="1">
+                    <Label Content="Y:"/>
+                    <TextBox x:Name="yTopLeftTextBox" Grid.Column="1" VerticalAlignment="Center"/>
+                </DockPanel>
+
+                <Label Content="BOTTOM LEFT POINT" Grid.Row="2" Grid.ColumnSpan="2"/>
+
+                <DockPanel LastChildFill="True" Margin="5" Grid.Row="3">
+                    <Label Content="X:"/>
+                    <TextBox x:Name="xBottomLeftTextBox" Grid.Column="1" VerticalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel LastChildFill="True" Grid.Column="1" Margin="5" Grid.Row="3">
+                    <Label Content="Y:"/>
+                    <TextBox x:Name="yBottomLeftTextBox" Grid.Column="1" VerticalAlignment="Center"/>
+                </DockPanel>
+
+                <Label Content="COLORS" Grid.Row="4" Grid.ColumnSpan="2"/>
+
+                <DockPanel LastChildFill="True" Grid.ColumnSpan="2" Margin="5" Grid.Row="5">
+                    <Label Content="SQUARE (#HEX):" FontSize="11"/>
+                    <TextBox x:Name="SquareColorTextBox" Grid.Column="1" VerticalAlignment="Center" MaxLength="7"/>
+                </DockPanel>
+                <DockPanel LastChildFill="True" Grid.ColumnSpan="2" Margin="5" Grid.Row="6">
+                    <Label Content="CIRCLE (#HEX):" FontSize="11" />
+                    <TextBox x:Name="CircleColorTextBox" Grid.Column="1" VerticalAlignment="Center" MaxLength="7"/>
+                </DockPanel>
+
+                <Border Grid.Row="7" Grid.ColumnSpan="2" Margin="5" Padding="2" BorderThickness="2" BorderBrush="MediumVioletRed"
+                        CornerRadius="5">
+                    <Button BorderThickness="0" Background="White" Click="DrawButton_Click">
+                        <TextBlock Text="DRAW"/>
+                    </Button>
+                </Border>
+
+                <Border Grid.Row="8" Grid.ColumnSpan="2" Margin="5" Padding="2" BorderThickness="2" BorderBrush="MediumVioletRed"
+                        CornerRadius="5">
+                    <Button BorderThickness="0" Background="White" Click="ClearButton_Click">
+                        <TextBlock Text="CLEAR"/>
+                    </Button>
+                </Border>
+                <Image Source="imaybesilly.jpg" Stretch="Fill" Grid.Row="9" Grid.ColumnSpan="2"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
